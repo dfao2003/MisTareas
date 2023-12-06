@@ -1,0 +1,73 @@
+<style>
+
+    *{
+        font-family: Arial, Helvetica, sans-serif; /*LETRA DEL SITIO WEB*/
+        letter-spacing: 0.03em;
+        line-height: 1.6;
+    }
+    
+    nav{
+        border-bottom: 1px solid black;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+    }
+
+    ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: auto;
+        list-style: none;
+    }
+
+    .text{
+        width: 150px;
+        border-radius: 7px;
+        padding: 7px;
+        text-align: center;
+        background-color: #F7CF2A;
+    }
+
+    .text:hover{
+        background-color: white;
+        border: 1px solid black;
+    }
+
+    a{
+        text-decoration: none;
+        color:black
+    }
+
+    /*RESPONSIVE*/
+
+    @media screen and (max-width: 720px){
+        ul{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .text{
+            width: 300px;
+        }
+    }
+
+
+</style>
+<nav>
+    <ul>
+        <li *ngFor="let link of paginas">
+            <a href="#" [routerLink]="link.path">
+                <div class="text">
+                    {{link.title}}
+                </div>
+            </a>
+        </li>
+    </ul>
+</nav>
+

@@ -1,0 +1,103 @@
+<style>
+    *{
+        font-family: Arial, Helvetica, sans-serif; /*LETRA DEL SITIO WEB*/
+        letter-spacing: 0.03em;
+        line-height: 1.6;
+    }
+
+    section{
+        padding: 20px;
+    }
+
+    .contForm{
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 410px;
+        padding: 7px;
+    }
+
+    .form{
+        padding: 7px;
+    }
+    .title{
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    textarea{
+        width: 100%;
+    }
+
+    .boton{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 7px;
+    }
+
+    button{
+        padding: 7px;
+        background-color: #F7CF2A;
+        border: 1px solid #F7CF2A;  
+        width: 250px;  
+    }
+
+    button:hover{
+        cursor: pointer;
+        background-color: white;
+        border: 1px solid black;
+    }
+
+    .contSec{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+</style>
+
+<section>
+    <div class="contSec">
+        <div class="contForm">
+            <div class="title">
+                <h2>Agregar Tarea</h2>
+            </div>
+            <div class="form">
+                <form>
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="txtTitulo">Ingrese el titulo de la tarea</label>
+                            </td>
+                            <td>
+                                <input type="text" id="txtTitulo" name="txtTitulo" [(ngModel)]="tarea.titulo"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="Fecha">Ingrese la fecha de la tarea</label>
+                            </td>
+                            <td>
+                                <input type="text"id="Fecha" name="Fecha" type="date" [(ngModel)]="tarea.fecha"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <label for="txtDescrpcion">Describa su tarea</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <textarea id="txtDescrpcion" name="txtDescrpcion" rows="3" [(ngModel)]="tarea.descripcion"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                </form>
+                <div class="boton">
+                    <button (click)="saveTarea()">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

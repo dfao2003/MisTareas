@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "apptareas-b3884": {
+      "hosting": {
+        "AppTareas": [
+          "apptareas-b3884"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "apptareas-b3884"
+  }
+}

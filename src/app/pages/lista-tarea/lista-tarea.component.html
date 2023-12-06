@@ -1,0 +1,106 @@
+<style>
+    section{
+        padding: 25px;
+    }
+
+    .titulo{
+        text-align: center;
+    }
+
+    .lista{
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap:20px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card{
+        border: 1px solid black;
+        width: 200px;
+        height: auto;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .tituloCard{
+        text-align: center;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        background-color: #F7CF2A;
+        padding: 5px;
+    }
+
+    .info{
+        padding: 10px;
+    }
+
+    .fecha{
+        border-bottom: 1px solid black;
+    }
+
+    .desc{
+        width: 100%;
+        margin-top: 5px;
+        overflow: hidden;
+        height: 100px;
+    }
+
+    .desc p{
+        font-size: 14px;
+    }
+
+    .visualizar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        background-color: #F7CF2A;
+        margin: 3px;
+    }
+
+    .visualizar:hover{
+        cursor: pointer;
+        background-color: white;
+        border: 1px solid black;
+    }
+
+    @media screen and (max-width: 830px){
+        
+    }
+
+
+</style>
+
+<section>
+    <div class="contSec">
+        <div class="titulo">
+            <h2>Listado de Tareas</h2>
+        </div>
+        <div class="lista">
+                <div class="card" *ngFor="let tarea of listaTareas | async">
+                    <div class="tituloCard">
+                        <h4>{{tarea.titulo}}</h4>
+                    </div>
+                    <div class="info">
+                        <div class="fecha">
+                            <p><b>Fecha: </b>{{tarea.fecha}}</p>
+                        </div>
+                        <div class="desc">
+                            <p>{{tarea.descripcion}}</p>
+                        </div>
+                    </div>
+                    <a routerLink="/paginas/tarea/{{tarea.uid}}">
+                        <div class="visualizar">
+                            <img src="../../../assets/watch.png" alt="ver">
+                        </div>
+                    </a>
+                </div>
+        </div>
+    </div>
+</section>
